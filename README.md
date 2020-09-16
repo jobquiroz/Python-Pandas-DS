@@ -37,19 +37,27 @@ In this week we review some basic Python commands and a general tour for Numpy.
    - Iterating over arrays
    - `zip` function.
   
-  
 --- 
 
 ## Pandas
 
-### Coursera - 01 Coursera basics Pandas
+### Coursera - [01 Coursera basics Pandas](Pandas/01 Relevant Snipets.md)
 
 Python notebook corresponding to week 2 from Introduction to Data Science by University of Michigan.
 
 In this week we review some basic Pandas commands.
 
 **Content**
-
-
+ - **Panda Series**
+   - How to declare them
+   - Querying a Series
+   - Doing loops vs Numpy operations
+ - **Pandas DataFrame**
+   - Declaring them
+   - Queries
+   - Dropping values
+   - Transpose
+   - Conditional queries
+   - Aggregator: count
                             
                             
