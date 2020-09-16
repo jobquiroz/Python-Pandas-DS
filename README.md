@@ -41,7 +41,7 @@ In this week we review some basic Python commands and a general tour for Numpy.
 
 ## Pandas
 
-### Coursera - [01 Coursera basics Pandas](Pandas/01 Relevant Snipets.md)
+### Coursera - [01 Coursera basics Pandas](Pandas/01\ Relevant\ Snipets.md)
 
 Python notebook corresponding to week 2 from Introduction to Data Science by University of Michigan.
 
