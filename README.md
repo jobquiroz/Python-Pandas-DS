@@ -6,6 +6,8 @@ I decided to put some comments in Spanish because I think that by describing (re
 It is divided into two folders: Python & Numpy and Pandas. 
 
 ## Python & Numpy
+ 
+--- 
 
 ### Coursera - 01 Coursera Python basics and Numpy
 
@@ -14,32 +16,29 @@ Python notebook corresponding to week 1 from Introduction to Data Science by Uni
 In this week we review some basic Python commands and a general tour for Numpy.
 
 **Content**
- - Python functions
- - Operations on numbers, lists and strings.
- - Dictionaries and ways to iterate them
- - The `.format()`method
- - Reading and writing CSV files
- 
-**Relevant snipets**
-*Iterating over dictionary keys and labels simultaneously* 
+ - **Python**
+  - Python functions
+  - Operations on numbers, lists and strings.
+  - Dictionaries and ways to iterate them
+  - The `.format()`method
+  - Reading and writing CSV files
+  - Dates and Times
+  - Object classes and `map()`
+ - **Numpy**
+  - Creating arrays (shape, reshape, linspace, resize, ones, zeros, eye)
+  - Combining arrays (vstack, hstack)
+  - Element-wise operations (+, -, *, /, **)
+  - Array operations (dot product, Transpose, casting)
+  - Aggregation functions (sum, max, min,mean, std, argmax, argmin)
+  - Indexing/slicing. 
+  - Conditional indexing (fundamental of Pandas)
+  - `.copy()` method.
+  - Creating random arrays
+  - Iterating over arrays
+  - `zip` function.
+  
+  
 
-```Python
-for name, email in x.items():
-  print(name)
-  print(email)
- ```
- 
-*Using dictionaries and `format()` for string formating*
-
-```Python
-# Data in dictionary
-sales_record = {'price': 3.24, 'num_items': 4, 'person': 'Chris'} 
-# String structure 
-sales_statement = '{} bought {} item(s) at a price of {} each for a total of {}'
-# Final formating and adding data
-print(sales_statement.format(sales_record['person'], sales_record['num_items'], sales_record['price'], 
-                            sales_record['num_items']*sales_record['price'])) # Operating while formating
-```
 
 
                             
