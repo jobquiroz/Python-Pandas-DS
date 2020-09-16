@@ -11,7 +11,38 @@ It is divided into two folders: Python & Numpy and Pandas.
 
 Python notebook corresponding to week 1 from Introduction to Data Science by University of Michigan.
 
-**Week 1:** Python basics and Numpy.
-Relevant content:
-  - Basic operations
-  - 
+In this week we review some basic Python commands and a general tour for Numpy.
+
+**Content**
+ - Python functions
+ - Operations on numbers, lists and strings.
+ - Dictionaries and ways to iterate them
+ - The `.format()`method
+ - Reading and writing CSV files
+ 
+**Relevant snipets**
+*Iterating over dictionary keys and labels simultaneously* 
+
+```Python
+for name, email in x.items():
+  print(name)
+  print(email)
+ ```
+ 
+*Using dictionaries and `format()` for string formating*
+
+```Python
+# Data in dictionary
+sales_record = {'price': 3.24, 'num_items': 4, 'person': 'Chris'} 
+# String structure 
+sales_statement = '{} bought {} item(s) at a price of {} each for a total of {}'
+# Final formating and adding data
+print(sales_statement.format(sales_record['person'], sales_record['num_items'], sales_record['price'], 
+                            sales_record['num_items']*sales_record['price'])) # Operating while formating
+```
+
+
+                            
+
+                            
+                            
