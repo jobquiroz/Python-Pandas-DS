@@ -5,9 +5,9 @@ I decided to put some comments in Spanish because I think that by describing (re
 
 It is divided into two folders: Python & Numpy and Pandas. 
 
-## Python & Numpy
- 
 --- 
+
+## Python & Numpy
 
 ### Coursera - 01 Coursera Python basics and Numpy
 
@@ -17,25 +17,25 @@ In this week we review some basic Python commands and a general tour for Numpy.
 
 **Content**
  - **Python**
-  - Python functions
-  - Operations on numbers, lists and strings.
-  - Dictionaries and ways to iterate them
-  - The `.format()`method
-  - Reading and writing CSV files
-  - Dates and Times
-  - Object classes and `map()`
+   - Python functions
+   - Operations on numbers, lists and strings.
+   - Dictionaries and ways to iterate them
+   - The `.format()`method
+   - Reading and writing CSV files
+   - Dates and Times
+   - Object classes and `map()`
  - **Numpy**
-  - Creating arrays (shape, reshape, linspace, resize, ones, zeros, eye)
-  - Combining arrays (vstack, hstack)
-  - Element-wise operations (+, -, *, /, **)
-  - Array operations (dot product, Transpose, casting)
-  - Aggregation functions (sum, max, min,mean, std, argmax, argmin)
-  - Indexing/slicing. 
-  - Conditional indexing (fundamental of Pandas)
-  - `.copy()` method.
-  - Creating random arrays
-  - Iterating over arrays
-  - `zip` function.
+   - Creating arrays (shape, reshape, linspace, resize, ones, zeros, eye)
+   - Combining arrays (vstack, hstack)
+   - Element-wise operations (+, -, *, /, **)
+   - Array operations (dot product, Transpose, casting)
+   - Aggregation functions (sum, max, min,mean, std, argmax, argmin)
+   - Indexing/slicing. 
+   - Conditional indexing (fundamental of Pandas)
+   - `.copy()` method.
+   - Creating random arrays
+   - Iterating over arrays
+   - `zip` function.
   
   
 
