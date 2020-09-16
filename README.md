@@ -38,10 +38,18 @@ In this week we review some basic Python commands and a general tour for Numpy.
    - `zip` function.
   
   
+--- 
 
+## Pandas
 
+### Coursera - 01 Coursera basics Pandas
 
-                            
+Python notebook corresponding to week 2 from Introduction to Data Science by University of Michigan.
+
+In this week we review some basic Pandas commands.
+
+**Content**
+
 
                             
                             
