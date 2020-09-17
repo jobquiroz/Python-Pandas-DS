@@ -96,21 +96,10 @@ only_gold = df.where(df['Gold'] > 0)   # Returns only the rows where the conditi
 df[df['Gold'] > 0]   # Same as the previous one but more elegant.
 ```
 
-
-#### DataFrame: Operations
-*Droping values*
-```Python 
-df.drop('Store 1')  # Removes row in a Non-destructive way
-del df['Name']      # Removes column destructively
-```
-
-*Transposing them: changing columns to row names*
+*More complex conditional*
 ```Python
-df.T -> Dataframe 
+df[(df['Gold'] > 0) | (df['Gold.1'] > 0)]
 ```
-
-*Counting*
-
 
 
 #### Loading CSV
@@ -122,6 +111,85 @@ df = pd.read_csv('data/olympics.csv')
 *More advanced options (see documentation)*
 ```Python
 df = pd.read_csv('data/olympics.csv', index_col = 0, skiprows=1)
+```
+
+#### DataFrame: Operations
+*Transposing them: changing columns to row names*
+```Python
+df.T -> Dataframe 
+```
+
+*Counting*
+```Python
+df['Gold'].count()   #Count the number of rows
+```
+
+*Unique values*
+```Python
+df['SUMLEV'].unique()   #Returns an array with unique values.. 
+```
+
+*Droping values*
+```Python 
+df.drop('Store 1')  # Removes row in a Non-destructive way
+del df['Name']      # Removes column destructively
+```
+
+*Droping NaN values*
+```Python 
+only_gold = only_gold.dropna()
+```
+
+*Filling NaN values*
+```Python
+df = df.fillna(method='ffill')  # See documentattion to see more methods... 
+```
+
+#### Indexing dataframes
+
+*Setting a column as index*
+```Python
+df['country'] = df.index  #First 'saves' actual index
+df = df.set_index('Gold')  # Switch index
+```
+
+*Setting more than one column as hierarchical index*  -> Similar to groupby
+```Python
+df = df.set_index(['STNAME', 'CTYNAME'])  # NO hay que usar forzosamente groupby
+
+# This type of dataframes are indexed as:
+df.loc['Michigan', 'Washtenaw County']
+
+# or as:
+df.loc[ [('Michigan', 'Washtenaw County'),
+         ('Michigan', 'Wayne County')] ]
+```
+
+*Reseting index [from 0 to n]
+```Python
+df = df.reset_index()
+```
+
+*Sorting index 
+```Python
+df = df.sort_index()
+```
+
+
+*Selecting only some columns*
+```Python
+columns_to_keep = ['STNAME',
+                   'CTYNAME',
+                    ...
+                   'POPESTIMATE2015']
+df = df[columns_to_keep]
+```
+
+
+
+
+```Python
+
 ```
 
 
