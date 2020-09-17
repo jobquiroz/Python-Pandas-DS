@@ -1,198 +1,53 @@
-## 01 Coursera Basic pandas
+## 02 Coursera Basic pandas: Assignment
 
 Week 2: Introduction to Data Science with Python course
 
-
 ### Relevant snipets
 
-#### Series: Declaring Series
+#### Renaming columns
 
 *Different ways to declare Series: Dictionary*
+It implements a clever way to rename columns withing a loop.. 
 ```Python
-sports = {'Archery': 'Bhutan',
-          'Golf': 'Scotland',
-          'Sumo': 'Japan',
-          'Taekwondo': 'South Korea'}
-s = pd.Series(sports)
+df.rename( ... )
 ```
 
-*Different ways to declare Series: Series function*
+#### `idxmax`
+
+*Implementing something like an argmax function*
 ```Python
-s = pd.Series(['Tiger', 'Bear', 'Moose'], index=['India', 'America', 'Canada'])
+def answer_one():
+    return df['Gold'].idxmax(axis = 0) 
+answer_one()
 ```
 
-*Combining both...*
+#### A complex query:
 ```Python
-sports = {'Archery': 'Bhutan',
-          'Golf': 'Scotland',
-          'Sumo': 'Japan',
-          'Taekwondo': 'South Korea'}
-s = pd.Series(sports, index=['Golf', 'Sumo', 'Hockey'])
+def answer_three():
+    df_more = df[(df['Gold']>=1) & (df['Gold.1']) >=1]
+    return (((df_more['Gold'])-(df_more['Gold.1']))/df_more['Gold.2']).abs().argmax()
+answer_three()
 ```
 
-#### Series: Querying Series
-
-`iloc` and `loc`
-
+#### Analyses a giant and complex query by parts:
 ```Python
-sports = {'Archery': 'Bhutan',
-          'Golf': 'Scotland',
-          'Sumo': 'Japan',
-          'Taekwondo': 'South Korea'}
+census_df[census_df['SUMLEV']==50].groupby('STNAME')['CENSUS2010POP'].apply(lambda x: x.nlargest(3).sum()).nlargest(3).index.tolist()
 
-s.iloc[3] -> 'South Korea'  # By index order
-s.loc['Golf'] -> 'Scotland' # By index name
-s[3]  -> 'South Korea'     # "Equivalent" to iloc... 
-s['Golf']  -> 'Scotland'  # "Equivalent" to loc... 
+# Analyzing:
+# Seleccionar solo counties reales
+counties = census_df[census_df['SUMLEV']==50]
+# Se agrupan por estado, a la columna de pop se aplica una función que encuentra los índices de los counties más poblados... y se suman
+counties.groupby('STNAME')['CENSUS2010POP'].apply(lambda x: x.nlargest(3).sum())
+# de toda esta lsita se encuentran los tres más poblados
+counties.groupby('STNAME')['CENSUS2010POP'].apply(lambda x: x.nlargest(3).sum()).nlargest(3)
+# Se sacan los indices (nombres de estados)
+counties.groupby('STNAME')['CENSUS2010POP'].apply(lambda x: x.nlargest(3).sum()).nlargest(3).index
+# Se pasan valores a lista
+counties.groupby('STNAME')['CENSUS2010POP'].apply(lambda x: x.nlargest(3).sum()).nlargest(3).index.tolist()
 ```
 
-**Put attention on the last two**...
-If the Series has numeric index then using s[0] will cause an error... It is better to be specific-> s.iloc[0]
-```Python
-sports = {99: 'Bhutan',
-          100: 'Scotland',
-          101: 'Japan',
-          102: 'South Korea'}
-s[0]  -> Error!
-s.iloc[0] -> 'Bhutan'
-```
-
-#### The DataFrame data structure: Declaring them...
-
-*Union of series*
-All of the series have the same Index, however, when they are concatenated those indexes will be the columns of the DataFrame.
-The dataframe will have its own indexes. 
+#### Using `startswith`:
 
 ```Python
-purchase_1 = pd.Series({'Name': 'Chris', 
-                        'Item Purchased': 'Dog Food',
-                        'Cost': 22.50})
-purchase_2 = pd.Series({'Name': 'Kevyn',
-                        'Item Purchased': 'Kitty Litter',
-                        'Cost': 2.50})
-purchase_3 = pd.Series({'Name': 'Vinod',
-                        'Item Purchased': 'Bird Seed',
-                        'Cost': 5.00})
-df = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=['Store 1', 'Store 1', 'Store 2'])
+counties_Wash = counties_and_regions[ counties_and_regions['CTYNAME'].str.startswith('Washington') ]
 ```
-
-#### DataFrame: Queries
-
-*Straightforward ways*
-```Python
-df.loc['Store 1'] -> Returns a series
-df.loc['Store 1, 'Cost'] -> Returns also a series, first consult all elements with index = Store 1, and then with columns = 'Cost'
-```
-
-*Selecting all index, but only a few columns*
-```Python
-df.loc[:,['Name', 'Cost']]
-```
-
-*Conditionals*
-```Python
-df['Gold'] > 0    #Returns a dataframe with rows indicating True or False (not that useful)
-only_gold = df.where(df['Gold'] > 0)   # Returns only the rows where the condition occurs (way more useful)
-df[df['Gold'] > 0]   # Same as the previous one but more elegant.
-```
-
-*More complex conditional*
-```Python
-df[(df['Gold'] > 0) | (df['Gold.1'] > 0)]
-```
-
-
-#### Loading CSV
-*The most common way*
-```Python
-df = pd.read_csv('data/olympics.csv')
-```
-
-*More advanced options (see documentation)*
-```Python
-df = pd.read_csv('data/olympics.csv', index_col = 0, skiprows=1)
-```
-
-#### DataFrame: Operations
-*Transposing them: changing columns to row names*
-```Python
-df.T -> Dataframe 
-```
-
-*Counting*
-```Python
-df['Gold'].count()   #Count the number of rows
-```
-
-*Unique values*
-```Python
-df['SUMLEV'].unique()   #Returns an array with unique values.. 
-```
-
-*Droping values*
-```Python 
-df.drop('Store 1')  # Removes row in a Non-destructive way
-del df['Name']      # Removes column destructively
-```
-
-*Droping NaN values*
-```Python 
-only_gold = only_gold.dropna()
-```
-
-*Filling NaN values*
-```Python
-df = df.fillna(method='ffill')  # See documentattion to see more methods... 
-```
-
-#### Indexing dataframes
-
-*Setting a column as index*
-```Python
-df['country'] = df.index  #First 'saves' actual index
-df = df.set_index('Gold')  # Switch index
-```
-
-*Setting more than one column as hierarchical index*  -> Similar to groupby
-```Python
-df = df.set_index(['STNAME', 'CTYNAME'])  # NO hay que usar forzosamente groupby
-
-# This type of dataframes are indexed as:
-df.loc['Michigan', 'Washtenaw County']
-
-# or as:
-df.loc[ [('Michigan', 'Washtenaw County'),
-         ('Michigan', 'Wayne County')] ]
-```
-
-*Reseting index [from 0 to n]
-```Python
-df = df.reset_index()
-```
-
-*Sorting index 
-```Python
-df = df.sort_index()
-```
-
-
-*Selecting only some columns*
-```Python
-columns_to_keep = ['STNAME',
-                   'CTYNAME',
-                    ...
-                   'POPESTIMATE2015']
-df = df[columns_to_keep]
-```
-
-
-
-
-```Python
-
-```
-
-
-
-
-
