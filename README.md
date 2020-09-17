@@ -59,5 +59,8 @@ In this week we review some basic Pandas commands.
    - Transpose
    - Conditional queries
    - Aggregator: count
+   - Indexing: querying, setting, and resetting
+   - Hierarchical Indexing
+   - Droping and filling Nan values
                             
                             
