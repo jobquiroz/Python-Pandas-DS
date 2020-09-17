@@ -62,5 +62,16 @@ In this week we review some basic Pandas commands.
    - Indexing: querying, setting, and resetting
    - Hierarchical Indexing
    - Droping and filling Nan values
-                            
+   
+   
+### Coursera - [02 Coursera basics Pandas Assignment](https://github.com/jobquiroz/Python-Pandas-DS/blob/master/Pandas/02%20Relevant%20Snipets.md)
+
+Doing some basic pandas operations on two sets of data
+
+**Content**
+  - Renaming columns
+  - `idxmax` and `abs`
+  - Contains complex queries
+  - `startswith`: basic text precessing
+  
                             
