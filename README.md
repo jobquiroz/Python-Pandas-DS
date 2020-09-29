@@ -73,5 +73,19 @@ Doing some basic pandas operations on two sets of data
   - `idxmax` and `abs`
   - Contains complex queries
   - `startswith`: basic text precessing
-  
+ 
+ ### Coursera - [03 Coursera advanced Pandas Assignment](https://github.com/jobquiroz/Python-Pandas-DS/blob/master/Pandas/03%20Relevant%20Snipets.md)
+ 
+ Exploring some advanced operations.
+ 
+ **Content** 
+ - Merging Dataframes (inner, outer, left, right...)
+ - Idiomatic pandas: apply
+ - Group by and advanced methods
+ - Agg function
+ - Categorical data and Scales
+ - Pitov tables
+ - Basic dates in Pandas
+ 
+
                             
