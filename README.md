@@ -9,7 +9,7 @@ It is divided into two folders: Python & Numpy and Pandas.
 
 ## Python & Numpy
 
-### Coursera - 01 Coursera Python basics and Numpy
+### Coursera - [01 Coursera Python basics and Numpy](https://github.com/jobquiroz/Python-Pandas-DS/blob/master/Python%20%26%20Numpy/01%20Relevant%20Snipets.md)
 
 Python notebook corresponding to week 1 from Introduction to Data Science by University of Michigan.
 
