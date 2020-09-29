@@ -87,5 +87,9 @@ Doing some basic pandas operations on two sets of data
  - Pitov tables
  - Basic dates in Pandas
  
+ ### Coursera - [04 Coursera advanced Pandas Assignment](https://github.com/jobquiroz/Python-Pandas-DS/blob/master/Pandas/04%20Relevant%20Snipets.md)         
 
-                            
+Pandas in action
+
+**Content**
+ - 
