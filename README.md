@@ -92,4 +92,8 @@ Doing some basic pandas operations on two sets of data
 Pandas in action
 
 **Content**
- - 
+ - Lectura de excel
+ - Renombrando columnas de df con un diccionario
+ - Merging dataframes
+ - Operating between columns
+ - Basic apply function
